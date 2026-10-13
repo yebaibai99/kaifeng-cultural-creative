@@ -1,21 +1,24 @@
 server:
-  port: 8082 #8080
+  port: 8082  #8080
 
 spring:
   application:
     name: wenchuang-shop
+
   datasource:
     url: ${DB_URL:jdbc:mysql://localhost:3306/wenchuang_shop?useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai}
     username: ${DB_USER:root}
-    password: ${DB_PASS:123456}
+    password: ${DB_PASS:your_password_here}
+
   jpa:
     open-in-view: false
     hibernate:
-      ddl-auto: validate
+      ddl-auto: none
     properties:
       hibernate.type.preferred_enum_jdbc_type: VARCHAR
+
   flyway:
-    enabled: false
+    enabled: true
 
   servlet:
     multipart:
@@ -27,5 +30,6 @@ app:
     issuer: wenchuang-shop
     secret: ${JWT_SECRET:CHANGE_ME_TO_A_LONG_RANDOM_SECRET}
     accessTokenMinutes: 240
+
   upload:
-    dir: C:/Users/15897/Desktop/wenchuang/Project/backend-spring/data/uploads
+    dir: ${UPLOAD_DIR:./data/uploads}
