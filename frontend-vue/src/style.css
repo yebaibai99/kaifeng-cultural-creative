@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+  body {
+    @apply bg-mall-paper text-mall-ink antialiased;
+    font-family: system-ui, -apple-system, "Segoe UI", "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei", sans-serif;
+  }
+
+  /* 前台商城顶栏导航 */
+  .wc-shell .router-link-active {
+    @apply font-medium text-mall-cinnabar;
+  }
+  .wc-shell .router-link-active::after {
+    content: "";
+    @apply mt-1 block h-0.5 w-full rounded-full bg-mall-cinnabar;
+  }
+
+  /* 竖排文字支持 */
+  .writing-vertical-rl {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+  }
+}
+
+@layer components {
+  .wc-shell {
+    @apply relative min-h-screen bg-mall-paper;
+  }
+
+  .wc-card {
+    @apply rounded-xl border border-mall-line bg-mall-card shadow-sm;
+  }
+  .wc-card-inner {
+    @apply p-4 md:p-5;
+  }
+
+  .wc-btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition disabled:cursor-not-allowed disabled:opacity-60;
+  }
+  .wc-btn-ghost {
+    @apply border border-mall-line bg-white text-mall-ink hover:bg-stone-50;
+  }
+  .wc-btn-primary {
+    @apply bg-mall-cinnabar text-white shadow-sm hover:bg-mall-cinnabar-hover;
+  }
+
+  .admin-top-link--active {
+    @apply bg-white/15 text-white;
+  }
+
+  .admin-side-link--active {
+    @apply bg-[#e0e7ff] font-medium text-admin-700 shadow-[inset_3px_0_0_#3b82f6];
+  }
+
+  .admin-input {
+    @apply w-full rounded border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 outline-none transition focus:border-admin-500 focus:ring-2 focus:ring-admin-500/20;
+  }
+
+  .admin-btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded px-4 py-2 text-sm font-medium text-white transition disabled:cursor-not-allowed disabled:opacity-60 bg-admin-500 hover:bg-admin-600;
+  }
+
+  .admin-btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded border border-gray-200 bg-white px-3 py-2 text-xs font-medium text-gray-700 transition hover:bg-gray-50;
+  }
+
+  .admin-btn-danger {
+    @apply inline-flex items-center justify-center gap-2 rounded px-3 py-2 text-xs font-medium text-white transition bg-rose-600 hover:bg-rose-500;
+  }
+
+  .wc-input {
+    @apply w-full rounded-lg border border-mall-line bg-white px-3 py-2 text-sm text-mall-ink outline-none transition focus:border-mall-cinnabar focus:ring-2 focus:ring-red-100;
+  }
+  .wc-textarea {
+    @apply w-full rounded-lg border border-mall-line bg-white px-3 py-2 text-sm text-mall-ink outline-none transition focus:border-mall-cinnabar focus:ring-2 focus:ring-red-100;
+  }
+
+  .wc-badge {
+    @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-medium ring-1 ring-inset;
+  }
+  .wc-badge-default {
+    @apply bg-stone-100 text-stone-600 ring-stone-200;
+  }
+  .wc-badge-heritage {
+    @apply bg-red-50 text-red-800 ring-red-200/80;
+  }
+  .wc-badge-creative {
+    @apply bg-sky-50 text-sky-800 ring-sky-200/80;
+  }
+  .wc-badge-souvenir {
+    @apply bg-amber-50 text-amber-900 ring-amber-200/80;
+  }
+  .wc-badge-handmade {
+    @apply bg-violet-50 text-violet-800 ring-violet-200/80;
+  }
+
+  /* 商城内次级按钮（描边红） */
+  .wc-btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-mall-cinnabar/40 bg-white px-4 py-2 text-sm font-medium text-mall-cinnabar transition hover:bg-red-50;
+  }
+
+  /* 中式美学增强 */
+  .section-title {
+    @apply relative flex items-center gap-2;
+  }
+  .section-title::before {
+    content: "";
+    @apply h-4 w-1 rounded-full bg-red-800;
+  }
+}

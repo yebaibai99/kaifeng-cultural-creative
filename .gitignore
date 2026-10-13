@@ -1,0 +1,25 @@
+# IDEA
+.idea/
+*.iml
+.vscode/
+*.log
+
+# 系统
+.DS_Store
+Thumbs.db
+
+# 后端
+backend-spring/target/
+backend-spring/*.jar
+backend-spring/application-local.yml
+backend-spring/*.env
+
+# 前端
+frontend-vue/node_modules/
+frontend-vue/dist/
+frontend-vue/.env.local
+
+# 敏感
+*.env
+*.key
+*.pem

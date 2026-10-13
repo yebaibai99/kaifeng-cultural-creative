@@ -1,0 +1,20 @@
+CREATE TABLE IF NOT EXISTS brands (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(128) NOT NULL,
+    logo VARCHAR(256) NOT NULL DEFAULT '',
+    description TEXT,
+    origin VARCHAR(64),
+    found_year INT,
+    enabled BOOLEAN NOT NULL DEFAULT TRUE,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+    );
+
+CREATE TABLE IF NOT EXISTS categories (
+   id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(64) NOT NULL,
+    parent_id BIGINT,
+    sort INT NOT NULL DEFAULT 0,
+    enabled BOOLEAN NOT NULL DEFAULT TRUE,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT fk_category_parent FOREIGN KEY (parent_id) REFERENCES categories(id)
+    );
