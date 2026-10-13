@@ -15,7 +15,7 @@ backend-spring/application-local.yml
 backend-spring/*.env
 
 # 前端
-frontend-vue/node_modules/
+frontend-vue/node_modules*/
 frontend-vue/dist/
 frontend-vue/.env.local
 
